@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.advance.calculator">
+
+
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
+    </queries>
+
+
+    <application
+        android:name="com.advance.calculator.tollsapp.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AdvanceCalculator">
+        <activity
+            android:name="com.advance.calculator.tollsapp.activities.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.advance.calculator.tollsapp.activities.EMIActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.advance.calculator.tollsapp.activities.BMICalculatorActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.advance.calculator.tollsapp.activities.AgeCalculatorActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name="com.advance.calculator.tollsapp.activities.UnitTemperature"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.advance.calculator.tollsapp.activities.UnitWeight"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.advance.calculator.tollsapp.activities.UnitLength"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.advance.calculator.tollsapp.activities.UnitArea"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.advance.calculator.tollsapp.activities.UnitConverter"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.advance.calculator.tollsapp.activities.ScientificCal"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.advance.calculator.tollsapp.activities.HistoryActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.advance.calculator.tollsapp.activities.StandardCal"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.advance.calculator.tollsapp.activities.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

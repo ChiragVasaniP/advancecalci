@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f8fb"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:id="@+id/llDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/LinearLayout02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:id="@+id/backButton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:onClick="onClick"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/dark_grey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="10dp"
+                        android:text="Age Calculator"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/text_color"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/llAgein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/TextView01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Today&apos;s Date"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/text_color"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/textViewCurrentDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginBottom="1dp"
+                        android:textColor="#aaffffff"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:id="@+id/FrameLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lldate1"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="@drawable/border_edittext"
+                        android:gravity="center_vertical">
+
+                        <EditText
+                            android:id="@+id/editTextCurrentDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:background="#00000000"
+                            android:ellipsize="end"
+                            android:gravity="start"
+                            android:hint="dd"
+                            android:inputType="numberDecimal|textCapCharacters"
+                            android:maxLength="2"
+                            android:nextFocusDown="@+id/etTMonth"
+                            android:padding="10dp"
+                            android:selectAllOnFocus="true"
+                            android:textColor="@color/text_color"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/tvSeprator1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-" />
+
+                        <EditText
+                            android:id="@+id/editTextCurrentMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000"
+                            android:ellipsize="end"
+                            android:gravity="end|fill_vertical"
+                            android:hint="mm"
+                            android:inputType="numberDecimal|textCapCharacters"
+                            android:maxLength="2"
+                            android:nextFocusDown="@+id/etTYear"
+                            android:padding="10dp"
+                            android:selectAllOnFocus="true"
+                            android:textColor="@color/text_color"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/tvSeprator2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-" />
+
+                        <EditText
+                            android:id="@+id/editTextCurrentYear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000"
+                            android:ellipsize="end"
+                            android:hint="yyyy"
+                            android:inputType="numberDecimal|textCapCharacters"
+                            android:maxLength="4"
+                            android:nextFocusDown="@+id/etBDay"
+                            android:padding="10dp"
+                            android:selectAllOnFocus="true"
+                            android:textColor="@color/text_color"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageViewCalenderFirst"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="15dp"
+                        android:contentDescription="Calender"
+                        android:padding="2dp"
+                        app:srcCompat="@drawable/calendar"
+                        app:tint="@color/dark_grey" />
+                </FrameLayout>
+
+                <RelativeLayout
+                    android:id="@+id/llAgein2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Date Of Birth"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/text_color" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:id="@+id/FrameLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/lldate2"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="@drawable/border_edittext"
+                        android:gravity="center_vertical">
+
+                        <EditText
+                            android:id="@+id/editTextBirthDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:background="#00000000"
+                            android:ellipsize="end"
+                            android:gravity="start"
+                            android:hint="dd"
+                            android:inputType="numberDecimal|textCapCharacters"
+                            android:maxLength="2"
+                            android:nextFocusDown="@+id/etTMonth"
+                            android:padding="10dp"
+                            android:selectAllOnFocus="true"
+                            android:textColor="@color/text_color"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/tvSeprator3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="#fff" />
+
+                        <EditText
+                            android:id="@+id/editTextBirthMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000"
+                            android:ellipsize="end"
+                            android:hint="mm"
+                            android:inputType="numberDecimal|textCapCharacters"
+                            android:maxLength="2"
+                            android:nextFocusDown="@+id/etTYear"
+                            android:padding="10dp"
+                            android:selectAllOnFocus="true"
+                            android:textColor="@color/text_color"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/tvSeprator4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="#fff" />
+
+                        <EditText
+                            android:id="@+id/editTextBirthYear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000"
+                            android:ellipsize="end"
+                            android:hint="yyyy"
+                            android:inputType="numberDecimal|textCapCharacters"
+                            android:maxLength="4"
+                            android:nextFocusDown="@+id/etBDay"
+                            android:padding="10dp"
+                            android:selectAllOnFocus="true"
+                            android:textColor="@color/text_color"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageViewCalenderSecond"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="15dp"
+                        android:contentDescription="Calender"
+                        app:srcCompat="@drawable/calendar"
+                        app:tint="@color/dark_grey" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/textViewCalculate"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/dark_grey_bg"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/ic_calculate"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:src="@drawable/ic_calculate"
+                            app:tint="@color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/ic_calculate"
+                            android:text="Calculate"
+                            android:textColor="@color/white" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/textViewClear"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/dark_grey_bg"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/ic_clear"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/ic_clear"
+                            app:tint="@color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/ic_clear"
+                            android:text="Clear"
+                            android:textColor="@color/white" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    app:cardBackgroundColor="#00000000"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/llAge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="10dp"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/textView4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Age:"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:id="@+id/tvTotalDays"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginEnd="3dp"
+                                    android:textColor="#aaffffff"
+                                    android:textSize="14sp"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/border_edittext"
+                                android:orientation="vertical"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/LinearLayout01"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="fill">
+
+                                    <TextView
+                                        android:id="@+id/TextView02"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="20dp"
+                                        android:layout_weight="1"
+                                        android:text="Years"
+                                        android:textColor="@color/text_color" />
+
+                                    <TextView
+                                        android:id="@+id/TextView04"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="Months"
+                                        android:textColor="@color/text_color" />
+
+                                    <TextView
+                                        android:id="@+id/TextView03"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="Days"
+                                        android:textColor="@color/text_color" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayout4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/textViewFinalYears"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="20dp"
+                                        android:layout_weight="1"
+                                        android:text="00"
+                                        android:textColor="@color/text_color"
+                                        android:textSize="30sp" />
+
+                                    <TextView
+                                        android:id="@+id/textViewFinalMonths"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="00"
+                                        android:textColor="@color/text_color"
+                                        android:textSize="30sp" />
+
+                                    <TextView
+                                        android:id="@+id/textViewFinalDays"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="00"
+                                        android:textColor="@color/text_color"
+                                        android:textSize="30sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/LinearLayout03"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/RelativeLayout01"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/TextView08"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Next Birthday:"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:id="@+id/tvBirthDay"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginRight="3dp"
+                                    android:textColor="#aaffffff"
+                                    android:textSize="14sp"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/LinearLayout05"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/border_edittext"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/LinearLayout06"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="fill">
+
+                                    <TextView
+                                        android:id="@+id/TextView14"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="20dp"
+                                        android:layout_weight="1"
+                                        android:text="Months"
+                                        android:textColor="@color/text_color" />
+
+                                    <TextView
+                                        android:id="@+id/TextView15"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="Days"
+                                        android:textColor="@color/text_color" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/LinearLayout04"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:id="@+id/textViewNextBirthdayMonths"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="20dp"
+                                        android:layout_weight="1"
+                                        android:text="00"
+                                        android:textColor="@color/text_color"
+                                        android:textSize="30sp" />
+
+                                    <TextView
+                                        android:id="@+id/textViewNextBirthdayDays"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="00"
+                                        android:textColor="@color/text_color"
+                                        android:textSize="30sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!--    <RelativeLayout
+            android:id="@+id/bannerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/nativeFrameStd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal" />
+        </RelativeLayout>-->
+</RelativeLayout>

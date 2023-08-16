@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/off_white_bg">
+
+    <View
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="-240dp"
+        android:layout_marginBottom="-150dp"
+        android:background="@drawable/circle" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-200dp"
+        android:layout_marginEnd="-200dp"
+        android:background="@drawable/circle" />
+
+    <RelativeLayout
+        android:id="@+id/tool"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/text_color"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#1a515151" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tool">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <RelativeLayout
+                            android:id="@+id/btnNormalCalculator"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginEnd="7.5dp"
+                            android:layout_marginBottom="7dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/gr_excelpdf"
+                            android:gravity="center"
+                            android:onClick="onClick">
+
+                            <ImageView
+                                android:id="@+id/ivImagePdf"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_centerHorizontal="true"
+                                android:padding="15dp"
+                                android:src="@drawable/ic_calc"
+                                app:tint="#e36360" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ivImagePdf"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/roboto_reg"
+                                android:text="Standard"
+                                android:textColor="#e36360" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/btnScientificCal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="7.5dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginEnd="7.5dp"
+                            android:layout_marginBottom="7dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/gr_textpdf"
+                            android:gravity="center"
+                            android:onClick="onClick">
+
+                            <ImageView
+                                android:id="@+id/ivTextPdf"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_centerHorizontal="true"
+                                android:padding="15dp"
+                                android:src="@drawable/ic_calc_sci"
+                                app:tint="#95c4f0" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ivTextPdf"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/roboto_reg"
+                                android:text="Scientific"
+                                android:textColor="#95c4f0" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/btnAgeCal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="7.5dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="7dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/gr_qrpdf"
+                            android:gravity="center"
+                            android:onClick="onClick">
+
+                            <ImageView
+                                android:id="@+id/ivQrPdf"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_centerHorizontal="true"
+                                android:padding="15dp"
+                                android:src="@drawable/ic_age_conv"
+                                app:tint="#d6b282" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ivQrPdf"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginEnd="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/roboto_reg"
+                                android:gravity="center"
+                                android:text="Age Calculator"
+                                android:textColor="#d6b282" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <RelativeLayout
+                            android:id="@+id/btnBMICal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginEnd="7.5dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/gr_imagepdf"
+                            android:gravity="center"
+                            android:onClick="onClick">
+
+                            <ImageView
+                                android:id="@+id/ivExcelPdf"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_centerHorizontal="true"
+                                android:padding="15dp"
+                                android:src="@drawable/ic_bmi_conv"
+                                app:tint="#8e84b9" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ivExcelPdf"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="6dp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/roboto_reg"
+                                android:gravity="center"
+                                android:text="BMI Calculator"
+                                android:textColor="#8e84b9" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/btnEMI"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="7.5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginEnd="7.5dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/gr_wordpdf"
+                            android:gravity="center"
+                            android:onClick="onClick">
+
+                            <ImageView
+                                android:id="@+id/ivWordPdf"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_centerHorizontal="true"
+                                android:padding="15dp"
+                                android:src="@drawable/ic_emi_conv"
+                                app:tint="#b880bf" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ivWordPdf"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="6dp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/roboto_reg"
+                                android:gravity="center"
+                                android:text="EMI Calculator"
+                                android:textColor="#b880bf" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/btnUnitCal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="7.5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/gr_watermarkk"
+                            android:gravity="center"
+                            android:onClick="onClick">
+
+                            <ImageView
+                                android:id="@+id/ivWatermarkPdf"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_centerHorizontal="true"
+                                android:padding="15dp"
+                                android:src="@drawable/ic_unit_converter"
+                                app:tint="#8cbda0" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ivWatermarkPdf"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginEnd="6dp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/roboto_reg"
+                                android:gravity="center"
+                                android:text="Unit Converter"
+                                android:textColor="#8cbda0" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
